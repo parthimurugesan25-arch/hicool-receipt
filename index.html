@@ -520,7 +520,10 @@ function buildReceiptHTML(d) {
       <div class="company-name">❄️ Hi Cool Sales &amp; Service</div>
       <div class="company-tamil">ஹை கூல் விற்பனை &amp; சேவை</div>
       <div class="company-sub">AC · Washing Machine · Refrigerator · RO Service</div>
-      <div class="company-sub">📞 Contact your technician | ✅ Quality Service Guaranteed</div>
+      <div class="company-sub" style="margin-top:6px;line-height:1.7">
+        📍 ASR Marriage Mahal, Dindigul Main Rd, Opp. Paravai Colony,<br>AIBEA A Colony, Paravai, Madurai — Tamil Nadu 625402
+      </div>
+      <div class="company-sub" style="margin-top:4px">📞 +91 80568 05787 &nbsp;|&nbsp; 🌐 hicoolservice.com</div>
       <div class="receipt-badge">SERVICE RECEIPT | சேவை ரசீது</div>
     </div>
 
@@ -571,6 +574,12 @@ function buildReceiptHTML(d) {
       <p class="thank-you">நன்றி! Thank You! 🙏</p>
       <p>உங்கள் நம்பிக்கைக்கு நன்றி. Thank you for choosing Hi Cool Sales & Service.</p>
       <p style="margin-top:6px;font-size:11px">For warranty service, please show this receipt.<br>உத்தரவாத சேவைக்கு இந்த ரசீதை காட்டுங்கள்.</p>
+      <div style="margin-top:12px;padding:10px 12px;background:#fff;border-radius:10px;border:1px solid var(--border)">
+        <p style="font-size:12px;font-weight:700;color:var(--brand-dark);margin-bottom:4px">📍 Hi Cool Sales & Service</p>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">ASR Marriage Mahal, Dindigul Main Rd,<br>Opp. Paravai Colony, AIBEA A Colony,<br>Paravai, Madurai — Tamil Nadu 625402</p>
+        <p style="font-size:12px;margin-top:6px">📞 <a href="tel:+918056805787" style="color:var(--brand);font-weight:600;text-decoration:none">+91 80568 05787</a> &nbsp;|&nbsp; 🌐 <a href="https://hicoolservice.com" style="color:var(--brand);font-weight:600;text-decoration:none">hicoolservice.com</a></p>
+        <a href="https://g.page/r/CUAxeG2lvvxkEAI/review" target="_blank" style="display:inline-block;margin-top:10px;background:var(--brand);color:#fff;padding:8px 18px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none">⭐ Post Your Review on Google</a>
+      </div>
     </div>
   </div>`;
 }
@@ -587,7 +596,9 @@ function generateReceipt() {
 
   const msg = encodeURIComponent(
     `🔧 *Hi Cool Sales & Service*\n` +
-    `ஹை கூல் விற்பனை & சேவை\n\n` +
+    `ஹை கூல் விற்பனை & சேவை\n` +
+    `📍 Paravai, Madurai — 625402\n` +
+    `📞 +91 80568 05787\n\n` +
     `Dear *${d.custName}*,\n\n` +
     `✅ உங்கள் சேவை முடிந்தது! Your service is completed.\n\n` +
     `📋 *Receipt No:* ${d.receiptNo}\n` +
@@ -596,7 +607,7 @@ function generateReceipt() {
     `🛠️ *Work Done:* ${d.workDone || d.complaint}\n` +
     `💰 *Total:* ₹${d.total.toFixed(0)}\n` +
     (d.warrantyDate ? `🛡️ *Warranty:* Valid till ${d.warrantyDate}\n` : '') +
-    `\nFor any queries, please contact us.\nமேலும் விவரங்களுக்கு தொடர்பு கொள்ளுங்கள். 🙏`
+    `\n⭐ Happy with our service? Please leave a review:\nhttps://g.page/r/CUAxeG2lvvxkEAI/review\n\nThank you! நன்றி 🙏`
   );
 
   document.getElementById('waBtn').href = `https://wa.me/91${d.custPhone}?text=${msg}`;
