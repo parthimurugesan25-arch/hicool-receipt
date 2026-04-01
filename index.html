@@ -308,7 +308,11 @@
     <div class="form-row">
       <div class="form-group">
         <label>Technician | தொழிலாளர்</label>
-        <input type="text" id="techName" placeholder="Technician name">
+        <select id="techName">
+          <option value="">-- Select Technician --</option>
+          <option value="Karthi - 8056805787">Karthi — 80568 05787</option>
+          <option value="Pandi - 9080303768">Pandi — 90803 03768</option>
+        </select>
       </div>
       <div class="form-group">
         <label>Warranty (Days) | உத்தரவாதம்</label>
@@ -577,7 +581,8 @@ function buildReceiptHTML(d) {
       <div style="margin-top:12px;padding:10px 12px;background:#fff;border-radius:10px;border:1px solid var(--border)">
         <p style="font-size:12px;font-weight:700;color:var(--brand-dark);margin-bottom:4px">📍 Hi Cool Sales & Service</p>
         <p style="font-size:11px;color:var(--muted);line-height:1.6">ASR Marriage Mahal, Dindigul Main Rd,<br>Opp. Paravai Colony, AIBEA A Colony,<br>Paravai, Madurai — Tamil Nadu 625402</p>
-        <p style="font-size:12px;margin-top:6px">📞 <a href="tel:+918056805787" style="color:var(--brand);font-weight:600;text-decoration:none">+91 80568 05787</a> &nbsp;|&nbsp; 🌐 <a href="https://hicoolservice.com" style="color:var(--brand);font-weight:600;text-decoration:none">hicoolservice.com</a></p>
+        <p style="font-size:12px;margin-top:6px">📞 <a href="tel:+918056805787" style="color:var(--brand);font-weight:600;text-decoration:none">+91 80568 05787</a> &nbsp;|&nbsp; 📞 <a href="tel:+919080303768" style="color:var(--brand);font-weight:600;text-decoration:none">+91 90803 03768</a></p>
+        <p style="font-size:12px;margin-top:4px">🌐 <a href="https://hicoolservice.com" style="color:var(--brand);font-weight:600;text-decoration:none">hicoolservice.com</a></p>
         <a href="https://g.page/r/CUAxeG2lvvxkEAI/review" target="_blank" style="display:inline-block;margin-top:10px;background:var(--brand);color:#fff;padding:8px 18px;border-radius:20px;font-size:12px;font-weight:700;text-decoration:none">⭐ Post Your Review on Google</a>
       </div>
     </div>
@@ -652,7 +657,8 @@ function saveToHistory() {
   document.getElementById('receiptNo').value = 'HC' + String(receiptCounter).padStart(4,'0');
 
   // Reset form
-  ['custName','custPhone','custAddr','brand','model','complaint','workDone','techName','warranty','notes'].forEach(id => document.getElementById(id).value = '');
+  ['custName','custPhone','custAddr','brand','model','complaint','workDone','warranty','notes'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('techName').value = '';
   document.getElementById('appliance').value = '';
   document.getElementById('status').value = 'Completed';
   document.getElementById('discount').value = '0';
